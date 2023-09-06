@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navbar with Search</title>
+    <style>
+        
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+    
+        .navbar a {
+           float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        
+        .search-container {
+            float: right;
+            padding: 10px;
+        }
+
+        
+        .search-container input[type="text"] {
+            padding: 6px;
+            border: none;
+            margin-top: 14px;
+        }
+
+        
+        .search-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+           
+           background-image: linear-gradient(#dfdcca, #cfd192);
+        }
+
+    
+        .image {
+            flex: 1;
+            max-width: 40%;
+          
+        }
+
+        
+        .info {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        .card-container {
+            display: flex; 
+            justify-content: space-between; 
+        }
+
+        
+        .card {
+            width: 360px;
+            height: 570px; 
+            border: 1px solid #ddd; 
+            border-radius: 5px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            margin: 10px; 
+            transition: all 0.3s ease-in-out;
+            
+            background-image: linear-gradient(rgb(102, 102, 101),rgb(233, 233, 204));
+            
+        }
+
+        
+        .card img {
+            width:300px; 
+            height: 350px; 
+            
+            padding: 24px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        
+        .card-content {
+            padding: 5px; 
+            transition: max-height 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        
+
+        .show-more-button,
+        .show-less-button {
+            text-align: center; 
+            margin: 10px; 
+            cursor: pointer; 
+            color: #007bff;
+        }
+
+        .show-less-button {
+            display: none; 
+        }
+
+ .card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+        h1{
+            color:rgb(168, 24, 72);
+            text-align: center;
+        }
+        h2{
+         color: rgb(4, 69, 130);
+        }
+        h3{
+            text-align: center;
+        }
+        p{
+            color: #333;
+            text-size-adjust: 25px;
+        }
+        i{
+            color:rgb(185, 45, 73);
+        }
+
+        @media screen  and  (max-width:678px)
+        {
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- Navbar HTML -->
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Hobbies</a>
+        <a href="#">Gallary</a>
+        <a href="#">Contact</a>
+        
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </div>
+        <br><br>
+      </div>
+      <div class="container">
+            
+            <img class="image" src="me.jpg" alt="Your Image">
+            
+            
+            <div class="info">
+                <h1>Sanika Sawant</h1>
+                <h2 style="color: rgb(7, 52, 216);">In a world full of copies, I'm an original!<h2>
+                <p>
+                    "Hi, This is Sanika Sawant.<br>
+                      I'm an <i>Electronics and telecommunication Engineer</i>, but when I'm off the clock, you'll often find me pursuing my hobbies. I'm really into  'Reading different books','writing poems','Travelling','Painting'. I find that they not only help me unwind but also bring a unique balance to my life!"
+                </p>
+
+                </div>
+        </div>
+        <br><br>
+        <h1>|| My Hobbies ||</h1>
+        
+        <div class="card-container">
+            
+            <div class="card">
+                <img src="girl-reading-book.jpg" alt="Image 1">
+                <div class="card-content">
+                    <h2>Reading Books</h2>
+                    <p><i>"if you want a new idea , read an old book."</i></p>
+                    <p class="additional-content" style="display: none;">
+                        Every new place is a new story waiting to be told
+                    </p>
+                    <div class="show-more-button" onclick="toggleContent('1')">Show More</div>
+                    <div class="show-less-button" onclick="toggleContent('1')">Show Less</div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="poem.jpg" alt="Image 2">
+                <div class="card-content">
+                    <h2>Writing poem</h2>
+                    <p><i>"Poetry is when an emotion has found it's thought and the thought has found words."</i></p>
+                    <p class="additional-content" style="display: none;">
+                        That's the thing about books.They let you travel without moving your feet.     
+                    </p>
+                    <div class="show-more-button" onclick="toggleContent('2')">Show More</div>
+                    <div class="show-less-button" onclick="toggleContent('2')">Show Less</div>
+                </div>
+            </div>
+    
+            
+            <div class="card">
+                <img src="print.jpg" alt="Image 3">
+                <div class="card-content">
+                    <h2>Painting</h2>
+                    <p><i>"Painting is self-Discovery.Every good artist paints what he is."</i></p>
+                    <p class="additional-content" style="display: none;">
+                        I dream of painting and then I paint my dream
+                    </p>
+                    <div class="show-more-button" onclick="toggleContent('3')">Show More</div>
+                    <div class="show-less-button" onclick="toggleContent('3')">Show Less</div>
+                </div>
+            </div>
+    
+              <div class="card">
+                <img src="travel.jpg" alt="Image 3">
+                <div class="card-content">
+                    <h2>Travel</h2>
+                    <p><i>"I have not been everywhere but it's on my list."</i></p>
+                    <p class="additional-content" style="display: none;">
+                        Find joy in the journey.
+                    </p>
+                    <div class="show-more-button" onclick="toggleContent('5')">Show More</div>
+                    <div class="show-less-button" onclick="toggleContent('5')">Show Less</div>
+                </div>
+            </div>
+        </div>
+    
+</body>
+</html>
